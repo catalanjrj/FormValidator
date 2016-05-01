@@ -14,8 +14,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 @property (weak, nonatomic) IBOutlet UITextField *zipTextField;
+@property (weak,nonatomic) IBOutlet UITextField *cityTextField;
+@property(weak,nonatomic)IBOutlet UITextField *stateTextField;
+@property(weak,nonatomic)IBOutlet UITextField *phoneNumberTextField;
 
 @property (strong,nonatomic) FormValidator* formValidator;
+
 
 
 @end
@@ -24,6 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title =@"Validator";
+    
  self.addressTextField.placeholder = @"Address";
    self.formValidator = [[FormValidator alloc]init];
 }
@@ -39,24 +45,59 @@
         if( [self.formValidator validateName:self.nameTextField.text]){
             [self.nameTextField resignFirstResponder];
             [self.addressTextField becomeFirstResponder];
+        }
             return YES;
             
-        }
+        
            
         
 //    return [[textField.text componentsSeparatedByString:@" "] count] >1;
     
     }else if ([textField isEqual:self.addressTextField]){
-        return [self.formValidator isValidAddress:self.addressTextField.text];
+        if ([self.formValidator isValidAddress:textField.text]) {
+        [self.addressTextField resignFirstResponder];
+        [self.cityTextField becomeFirstResponder];
+        }
         
-    }else if ([textField isEqual:self.zipTextField]){
-        return [self.formValidator isZipCode: self.zipTextField.text];
-    
-    }
+        
+        return YES;
+            
+        }else if ([textField isEqual:self.cityTextField]){
+            if ([self.formValidator isValidCity:textField.text]) {
+                [self.cityTextField resignFirstResponder];
+                [self.stateTextField becomeFirstResponder];
+            }
+                return YES;
+            }else if ([textField isEqual:self.stateTextField]){
+                if ([self.formValidator isValidState:textField.text]) {
+                    [self.stateTextField resignFirstResponder];
+                    [self.zipTextField becomeFirstResponder];
+                }
+                    return YES;
+                }else if ([textField isEqual:self.zipTextField]){
+                    if ([self.formValidator isZipCode:textField.text]) {
+                        [self.zipTextField resignFirstResponder];
+                        [self.phoneNumberTextField becomeFirstResponder];
+                    }
+                        return YES;
+                
+                }else if ([textField isEqual:self.phoneNumberTextField]){
+                    if ([self.formValidator isValidPhoneNumber:textField.text]) {
+                        [self.phoneNumberTextField resignFirstResponder];
+                    }
+                    return YES;
+                }
+
+            
+
+        
+
     
     return NO;
-
 }
+                    
+            
 
 
-@end
+
+    @end

@@ -40,6 +40,29 @@
     return rc;
 
 }
+- (BOOL)isValidCity:(NSString *)city {
+    return city.length > 0;
+}
+
+- (BOOL)isValidState:(NSString *)state {
+    return state.length == 2;
+}
+- (BOOL)isValidPhoneNumber:(NSString *)phoneNumber{
+    NSTextCheckingType detectorType = NSTextCheckingTypePhoneNumber;
+    
+    NSError *error;
+    
+    // dataDetector
+    NSDataDetector *dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
+    
+    
+    __block BOOL rc = NO;
+    [dataDetector enumerateMatchesInString:phoneNumber options:kNilOptions range:NSMakeRange(0, phoneNumber.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        rc = YES;
+    }];
+    
+    return rc;
+}
 
 
 @end

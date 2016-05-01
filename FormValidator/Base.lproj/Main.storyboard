@@ -28,7 +28,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7hD-cF-EXP"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-hy-RCv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-hy-RCv">
                                 <rect key="frame" x="200" y="78" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="wgq-TR-Zz8"/>
@@ -39,7 +39,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="M9x-iY-jyc"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-re-ei5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-re-ei5">
                                 <rect key="frame" x="200" y="116" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="D5s-l3-dE1"/>
@@ -50,21 +50,63 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ahF-pC-xHs"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XNb-VT-cO5">
+                                <rect key="frame" x="200" y="154" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="blm-o4-WWI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4GC-yU-mdH"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kfq-7K-vcW">
+                                <rect key="frame" x="200" y="230" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="TSy-wa-4Q9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Wvr-kb-HhX"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3kg-gp-uyd">
+                                <rect key="frame" x="200" y="192" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Hlr-TE-sss"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="c19-Hf-k3d"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3kg-gp-uyd" firstAttribute="top" secondItem="XNb-VT-cO5" secondAttribute="bottom" constant="8" id="40k-Qf-Bri"/>
                             <constraint firstItem="GAt-dh-tG0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Uv-5a-teV"/>
+                            <constraint firstItem="Kfq-7K-vcW" firstAttribute="top" secondItem="3kg-gp-uyd" secondAttribute="bottom" constant="8" id="8dL-V6-25f"/>
+                            <constraint firstItem="3kg-gp-uyd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9xG-Le-n8e"/>
                             <constraint firstItem="cGS-hy-RCv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B7R-6V-QSm"/>
+                            <constraint firstItem="XNb-VT-cO5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VKS-Wz-arf"/>
                             <constraint firstItem="GAt-dh-tG0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Z1k-sg-bUd"/>
                             <constraint firstItem="cGS-hy-RCv" firstAttribute="top" secondItem="GAt-dh-tG0" secondAttribute="bottom" constant="8" id="aFJ-GC-Fg6"/>
+                            <constraint firstItem="Kfq-7K-vcW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ab2-Fz-tgp"/>
                             <constraint firstItem="pQI-re-ei5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="isS-EZ-peM"/>
+                            <constraint firstItem="XNb-VT-cO5" firstAttribute="top" secondItem="pQI-re-ei5" secondAttribute="bottom" constant="8" id="jAE-un-o4w"/>
                             <constraint firstItem="pQI-re-ei5" firstAttribute="top" secondItem="cGS-hy-RCv" secondAttribute="bottom" constant="8" id="oim-Xo-H5O"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addressTextField" destination="cGS-hy-RCv" id="Uuq-lw-Gbo"/>
+                        <outlet property="addressTextField" destination="cGS-hy-RCv" id="zWC-GD-spL"/>
+                        <outlet property="cityTextField" destination="pQI-re-ei5" id="bvi-HS-aMq"/>
                         <outlet property="nameTextField" destination="GAt-dh-tG0" id="CrK-XS-tQM"/>
-                        <outlet property="zipTextField" destination="pQI-re-ei5" id="BdT-Rb-pUA"/>
+                        <outlet property="phoneNumberTextField" destination="Kfq-7K-vcW" id="7Vm-x0-Bnl"/>
+                        <outlet property="stateTextField" destination="XNb-VT-cO5" id="M4a-1s-dvS"/>
+                        <outlet property="zipTextField" destination="3kg-gp-uyd" id="eRp-2q-NTE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
